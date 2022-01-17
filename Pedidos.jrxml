@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pedidos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9f7506aa-e269-442c-848e-e7f3af86f223">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Pedidos"/>
+	<property name="background.image.path" value="C:\Users\marco\Downloads\wood-background--dark-wooden-background.jpg"/>
+	<property name="background.image.x" value="10"/>
+	<property name="background.image.y" value="10"/>
+	<property name="background.image.widht" value="595"/>
+	<property name="background.image.alpha" value="1.0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from productos]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="productos"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="producto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="producto"/>
+		<property name="com.jaspersoft.studio.field.label" value="producto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="productos"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="disponible" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="disponible"/>
+		<property name="com.jaspersoft.studio.field.label" value="disponible"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="productos"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precio" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="precio"/>
+		<property name="com.jaspersoft.studio.field.label" value="precio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="productos"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="productos"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="disponible1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{disponible}]]></variableExpression>
+	</variable>
+	<variable name="precio1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{precio}]]></variableExpression>
+	</variable>
+	<variable name="tipo1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{tipo}]]></variableExpression>
+	</variable>
+	<variable name="producto1" class="java.lang.Integer" resetType="Page" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{producto}]]></variableExpression>
+	</variable>
+	<variable name="disponible2" class="java.lang.Integer" resetType="Page" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{disponible}]]></variableExpression>
+	</variable>
+	<group name="id">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<group name="producto">
+		<groupExpression><![CDATA[$F{producto}]]></groupExpression>
+	</group>
+	<group name="disponible">
+		<groupExpression><![CDATA[$F{disponible}]]></groupExpression>
+	</group>
+	<group name="precio">
+		<groupExpression><![CDATA[$F{precio}]]></groupExpression>
+	</group>
+	<group name="tipo">
+		<groupExpression><![CDATA[$F{tipo}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="170" splitType="Stretch">
+			<image>
+				<reportElement x="20" y="20" width="115" height="116" uuid="df863e94-20a8-4e59-90fd-9a233ccd67e7"/>
+				<imageExpression><![CDATA["C:/Users/marco/Downloads/cafe.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="210" y="50" width="260" height="69" uuid="de99c0b1-10d3-4586-a987-30bef6310f79"/>
+				<textElement>
+					<font fontName="Blackadder ITC" size="26"/>
+				</textElement>
+				<textFieldExpression><![CDATA["La Carta de Café Marco"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="70" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="50">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="141" height="30" backcolor="#EBD64D" uuid="3c59f00c-46d6-4abe-b075-6f51ba4e520a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f52d87ba-5d4b-4b32-9aab-9655c25780e4"/>
+				</reportElement>
+				<text><![CDATA[producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="141" y="0" width="138" height="30" backcolor="#EBD64D" uuid="f653a2a6-eb2c-41f6-9a94-6226618ffb5f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa38a813-e4c8-4f3d-bbba-8a98e104bd73"/>
+				</reportElement>
+				<text><![CDATA[disponible]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="279" y="0" width="138" height="30" backcolor="#EBD64D" uuid="822556bc-be62-4873-806d-a040228a0c1f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4cd7e514-15d4-4b4b-9562-e778504a303f"/>
+				</reportElement>
+				<text><![CDATA[precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="417" y="0" width="138" height="30" backcolor="#EBD64D" uuid="9e5d9319-85f6-4529-9a75-7eb215030fae">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf2b0fb1-0167-4943-beaa-4d9c5e4e745d"/>
+				</reportElement>
+				<text><![CDATA[tipo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="144" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="141" height="30" uuid="6f58d16a-2ab6-4599-bdbc-2d6e304f8a92">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f52d87ba-5d4b-4b32-9aab-9655c25780e4"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{producto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="138" height="30" uuid="bfddcb97-8530-4c42-a8ca-29d0b68b2b65">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa38a813-e4c8-4f3d-bbba-8a98e104bd73"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{disponible}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="138" height="30" uuid="89644eab-5b76-4ded-9dfe-273b96940977">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4cd7e514-15d4-4b4b-9562-e778504a303f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="138" height="30" uuid="060157fd-e00d-4b68-b6f9-671dba36cb75">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf2b0fb1-0167-4943-beaa-4d9c5e4e745d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
